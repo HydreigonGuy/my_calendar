@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <head>
     {% load static %}
+    {% csrf_token %}
     <script src="{% static 'js/calendar.js' %}"></script>
+    <script src="{% static 'js/format.js' %}"></script>
+    <script src="{% static 'js/manage.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
     <title>My Calendar</title>
 </head>
 <body>
+    <div id="manage_popup"></div>
     <h2>My Celendar</h2>
-    <button>+ day event</button>
+    <button onclick="create_day_event_popup()">+ day event</button>
     <div id="calendar_data">
     </div>
 </body>
