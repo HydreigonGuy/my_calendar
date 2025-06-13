@@ -1,0 +1,19 @@
+version: '3'
+services:
+  calendar_app:
+    build: .
+    ports:
+      - '8000:8000'
+    depends_on:
+      - calendar_db
+  calendar_db:
+    image: postgres:latest
+    volumes:
+      - calendar_postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=korean_db
+
+volumes:
+  calendar_postgres_data:
