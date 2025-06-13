@@ -6,6 +6,8 @@ services:
       - '8000:8000'
     depends_on:
       - calendar_db
+    volumes:
+      - ./my_calendar/:/app/
   calendar_db:
     image: postgres:latest
     volumes:
