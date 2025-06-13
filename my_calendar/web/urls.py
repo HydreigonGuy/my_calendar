@@ -6,4 +6,5 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("get_calendar_data", views.get_calendar_data),
     path("add_day_event", views.add_day_event),
+    path("add_yearly_event", views.add_yearly_event),
 ]

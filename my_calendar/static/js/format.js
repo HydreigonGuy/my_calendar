@@ -11,6 +11,12 @@ function format_calendar_data(calendar_data) {
         if (day.getDay() == 0 || day.getDay() == 6)
             day_class += " weekend_container";
         formatted += `<div class="${day_class}"><p>${day_iso}</p>`;
+        for (i in calendar_data.yearly_events) {
+            yearly_event = calendar_data.yearly_events[i];
+            if (yearly_event.day == day.getDate() && yearly_event.month == day.getMonth() + 1) {
+                formatted += `<p>${yearly_event.name}</p>`;
+            }
+        }
         if (calendar_data.day_events.hasOwnProperty(day_iso)) {
             for (i in calendar_data.day_events[day_iso]) {
                 formatted += `<p>${calendar_data.day_events[day_iso][i]}</p>`;

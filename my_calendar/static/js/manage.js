@@ -19,7 +19,44 @@ function create_day_event() {
           'Content-Type': 'application/json',
           'X-CSRFToken': document.getElementsByName("csrfmiddlewaretoken")[0].value
         },
-        body: JSON.stringify({name: name, date: date})
+        body: JSON.stringify({
+            name: name,
+            date: date
+        })
+    })
+    .then(function (resp) {
+        document.getElementById("manage_popup").innerHTML = "";
+        retrieve_calendar_data();
+    })
+}
+
+
+function create_yearly_event_popup() {
+    document.getElementById("manage_popup").innerHTML = `
+        <span>Name : </span><input type="text" value="" id="create_yearly_event_name">
+        <input type="number" min="1" max="31" value="" id="create_yearly_event_day">
+        <input type="number" min="1" max="12" id="create_yearly_event_month">
+        <button onclick="create_yearly_event()">Create</button>`;
+}
+
+
+function create_yearly_event() {
+    let name = document.getElementById("create_yearly_event_name").value;
+    let day = document.getElementById("create_yearly_event_day").value;
+    let month = document.getElementById("create_yearly_event_month").value;
+
+    fetch("add_yearly_event", {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRFToken': document.getElementsByName("csrfmiddlewaretoken")[0].value
+        },
+        body: JSON.stringify({
+            name: name,
+            day: day,
+            month: month
+        })
     })
     .then(function (resp) {
         document.getElementById("manage_popup").innerHTML = "";
