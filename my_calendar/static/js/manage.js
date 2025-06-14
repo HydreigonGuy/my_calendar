@@ -11,9 +11,9 @@ function create_day_event_popup() {
             <div class="manage_popup_contents">
                 <button class="manage_popup_close_button" onclick="close_manage_popup()">x</button>
                 <h3>Create Day Event</h3>
-                <span>Name : </span><input type="text" value="" id="create_day_event_name">
-                <input type="date" value="" id="create_day_event_date">
-                <button onclick="create_day_event()">Create</button>
+                <span>Name : </span><input type="text" value="" id="create_day_event_name"><br/>
+                <input type="date" value="" id="create_day_event_date"><br/>
+                <button class="manage_popup_send_button" onclick="create_day_event()">Create</button>
             </div>
         </div>`;
 }
@@ -48,10 +48,10 @@ function create_yearly_event_popup() {
             <div class="manage_popup_contents">
                 <button class="manage_popup_close_button" onclick="close_manage_popup()">x</button>
                 <h3>Create Yearly Event</h3>
-                <span>Name : </span><input type="text" value="" id="create_yearly_event_name">
-                <input type="number" min="1" max="31" value="" id="create_yearly_event_day">
-                <input type="number" min="1" max="12" id="create_yearly_event_month">
-                <button onclick="create_yearly_event()">Create</button>
+                <span>Name : </span><input type="text" value="" id="create_yearly_event_name"><br/>
+                <span>Day : </span><input type="number" min="1" max="31" value="" id="create_yearly_event_day"><br/>
+                <span>Month : </span><input type="number" min="1" max="12" id="create_yearly_event_month"><br/>
+                <button class="manage_popup_send_button" onclick="create_yearly_event()">Create</button>
             </div>
         </div>`;
 }

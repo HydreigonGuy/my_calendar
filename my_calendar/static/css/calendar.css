@@ -55,10 +55,15 @@ body {
     width: 60%;
     margin: 20%;
     border: 1px solid #d1f7ff;
+    text-align: center;
 }
 
 .manage_popup_contents h3 {
     margin: 30px;
+}
+
+.manage_popup_contents input {
+    margin: 10px;
 }
 
 .manage_popup_background {
@@ -78,4 +83,13 @@ body {
     color: #d1f7ff;
     border: none;
     background: none;
+}
+
+.manage_popup_send_button {
+    color: #d1f7ff;
+    background-color: #01012b;
+    border: none;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 15px;
 }
